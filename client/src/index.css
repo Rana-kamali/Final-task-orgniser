@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.form-inner {
+  font-family: sans-serif;
+  text-align: right;
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  padding: 20px;
+  margin-top: 30px;
+}
+h5{
+  color: #d54d7b; 
+  font-family: "Great Vibes", 
+  cursive; 
+  font-size: 30px; 
+  line-height: 30px; 
+  font-weight: normal; 
+  margin-bottom: 20px; 
+  margin-top: 40px; 
+  text-align: left; 
+  text-shadow: 0 1px 1px #fff;
+
+}
+p{
+  color: #111; 
+  font-family: 'Open Sans', sans-serif; 
+  font-size: 16px; 
+  line-height: 28px; 
+  margin: 0 0 48px;
+  width: 500px;
+  height: 250px;
+}
+img{
+  width: 100%;
+    max-width: 500px;
+}
+input {
+  margin-top: 20px;
+  margin-bottom: 20 px;
+  width: 396px;
+  height: 36px;
+  text-align: left;
+}
+.loginbtn {
+  margin-top: 20px;
+  width: 114.2px;
+  height: 36px;
+  text-align: right;
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.error {
+  color: #d8000c;
+  background-color: #ffbaba;
+  text-align: left;
+  padding-left: 40px;
+  margin-top: 28px;
+  height: 36px;
+  background-image: url("https://i.imgur.com/GnyDvKN.png");
+  background-repeat: no-repeat;
+}
+h2 {
+  text-align: center;
+  size: 16px;
+  margin-top: 50px;
+}
+
+.create-task {
+  text-align: right;
+}
+.MuiButton-label {
+  width: 100px;
+}
+.modal {
+  margin-top: 30px;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 3px black;
+}
