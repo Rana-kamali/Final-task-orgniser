@@ -24,7 +24,7 @@ const TaskTable = (props) => {
   const [tasks, setTasks] = useState([]);
   const [projects, setProjects] = useState([]);
   // const [open, setOpen] = React.useState(false);
-const [todos, setTodos]= useState([]);
+  const [todos, setTodos] = useState([]);
   useEffect(() => {
     fetch("/api/todos", {
       method: "GET",
@@ -41,7 +41,21 @@ const [todos, setTodos]= useState([]);
       });
   }, []);
 
-
+  const reloadTodos = () => {
+    fetch("/api/todos", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => {
+        console.log("Task respond: ", response);
+        return response.json();
+      })
+      .then((dropdown, i) => {
+        setTodos(dropdown);
+      });
+  };
 
   const classes = useStyles();
   const [list, setList] = useState({
@@ -72,7 +86,6 @@ const [todos, setTodos]= useState([]);
     setTasks(props.tasks);
   }, [props.tasks]);
 
- 
   const handleEdit = (id) => {
     console.log("id: ", id);
     setShowEdit(id);
@@ -138,7 +151,6 @@ const [todos, setTodos]= useState([]);
                     {el.date}
                   </TextField>
                 </TableCell>
-
                 <TableCell name="status" align="right" onChange={handleChange}>
                   {el.status}
                 </TableCell>
@@ -166,6 +178,7 @@ const [todos, setTodos]= useState([]);
       </TableContainer>
       {showEdit && (
         <Edit
+          reload={reloadTodos}
           projects={projects}
           showEdit={showEdit}
           onClick={() => {

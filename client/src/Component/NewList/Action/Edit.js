@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Button from "@material-ui/core/Button";
-import Modal from 'react-bootstrap/Modal'
+import Modal from "react-bootstrap/Modal";
 import Container from "@material-ui/core/Container";
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
-
 
 import TextField from "@material-ui/core/TextField";
 
@@ -34,14 +33,15 @@ const Edit = (props) => {
       body: JSON.stringify(formState),
     }).then((response) => {
       console.log("Edit response:", response);
+      props.setShowEdit("")
+      props.reload();
     });
-    props.setShowEdit("");
-  
+    
   };
 
   const handleChange = (e) => {
-    console.log('what happens here?? ')
-    console.log('event: ', e.target);
+    console.log("what happens here?? ");
+    console.log("event: ", e.target);
     const newState = { ...formState };
     console.log("new state", newState);
     newState[e.target.name] = e.target.value;
@@ -73,162 +73,85 @@ const Edit = (props) => {
     console.log("edit use effect");
   }, [props.showEdit]);
 
-
-
   const handleClose = () => props.setShowEdit("");
   // const handleShow = () => setShow(true);
 
-
   return (
-
-    
-
     <div className="modal">
       <Container maxWidth="sm">
-      <Modal show={props.showEdit ? true : false} onHide={handleClose}>
-        <Modal.Header>
-          <Modal.Title>please edit your task</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-        <TextField
-          autoFocus
-          margin="dense"
-          id="name"
-          label="Name"
-          type="text"
-          fullWidth
-          name="name"
-          value={formState.name}
-          onChange={handleChange}
-        />
-
-<TextField 
-        id="datetime-local"
-        name="date"
-        value={formState.date}
-        onChange={handleChange}
-        label="Date"
-        type="datetime-local"
-        defaultValue="2017-05-24T10:30"
-       
-        InputLabelProps={{
-          shrink: true,
-        }}
-      />
-    
-<div>
-        <select
-          id="select"
-          name="status"
-          value={formState.status}
-          onChange={handleChange}
-        >
-          <option>Assigned</option>
-          <option>Working</option>
-          <option>Completed</option>
-          <option>None</option>
-        </select>
-        </div>
       
-       
-        <TextField
-          autoFocus
-          margin="dense"
-          id="comment"
-          label="comment"
-          type="text"
-          fullWidth
-          name="comment"
-          value={formState.comment}
-          onChange={handleChange}
-        />
-        
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" color="primary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary"  color="primary" onClick={handleSubmit}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
-      </Modal>
-
-      <Dialog
-        open={props.showEdit ? true : false}
-        handleClick={handleChange}
-        onClose={handleClose}
-        aria-labelledby="form-dialog-title"
-      >
-        <DialogTitle id="form-dialog-title">please edit your task</DialogTitle>
-        <DialogContent>
-        <TextField
-          autoFocus
-          margin="dense"
-          id="name"
-          label="Name"
-          type="text"
-          fullWidth
-          name="name"
-          value={formState.name}
-          onChange={handleChange}
-        />
-
-<TextField 
-        id="datetime-local"
-        name="date"
-        value={formState.date}
-        onChange={handleChange}
-        label="Date"
-        type="datetime-local"
-        defaultValue="2017-05-24T10:30"
-       
-        InputLabelProps={{
-          shrink: true,
-        }}
-      />
-    
-<div>
-        <select
-          id="select"
-          name="status"
-          value={formState.status}
-          onChange={handleChange}
+        <Dialog
+          open={props.showEdit ? true : false}
+          handleClick={handleChange}
+          onClose={handleClose}
+          aria-labelledby="form-dialog-title"
         >
-          <option>Assigned</option>
-          <option>Working</option>
-          <option>Completed</option>
-          <option>None</option>
-        </select>
-        </div>
-      
-       
-        <TextField
-          autoFocus
-          margin="dense"
-          id="comment"
-          label="comment"
-          type="text"
-          fullWidth
-          name="comment"
-          value={formState.comment}
-          onChange={handleChange}
-        />
+          <DialogTitle id="form-dialog-title">
+            please edit your task B
+          </DialogTitle>
+          <DialogContent>
+            <TextField
+              autoFocus
+              margin="dense"
+              id="name"
+              label="Name"
+              type="text"
+              fullWidth
+              name="name"
+              value={formState.name}
+              onChange={handleChange}
+            />
 
+            <TextField
+              id="datetime-local"
+              name="date"
+              value={formState.date}
+              onChange={handleChange}
+              label="Date"
+              type="datetime-local"
+              defaultValue="2017-05-24T10:30"
+              InputLabelProps={{
+                shrink: true,
+              }}
+            />
 
-        </DialogContent>
-        <DialogActions>
-        <Button variant="secondary" color="primary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary"  color="primary" onClick={handleSubmit}>
-            Save Changes
-          </Button>
-        </DialogActions>
-         </Dialog>
+            <div>
+              <select
+                id="select"
+                name="status"
+                value={formState.status}
+                onChange={handleChange}
+              >
+                <option>Assigned</option>
+                <option>Working</option>
+                <option>Completed</option>
+                <option>None</option>
+              </select>
+            </div>
+
+            <TextField
+              autoFocus
+              margin="dense"
+              id="comment"
+              label="comment"
+              type="text"
+              fullWidth
+              name="comment"
+              value={formState.comment}
+              onChange={handleChange}
+            />
+          </DialogContent>
+          <DialogActions>
+            <Button variant="secondary" color="primary" onClick={handleClose}>
+              Close
+            </Button>
+            <Button variant="primary" color="primary" onClick={handleSubmit}>
+              Save Changes
+            </Button>
+          </DialogActions>
+        </Dialog>
       </Container>
     </div>
- 
   );
 };
 export default Edit;

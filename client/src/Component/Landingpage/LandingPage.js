@@ -42,23 +42,7 @@ const LandingPage = (props) => {
 
   return (
     <div>
-      <div className={classes.root}>
-        <AppBar position="static">
-          <Toolbar>
-            <IconButton
-              edge="start"
-              className={classes.menuButton}
-              color="inherit"
-              aria-label="menu"
-            ></IconButton>
-            {/* <Typography variant="h9" className={classes.title}>
-              Welcome {user.name}
-            </Typography> */}
-
-            
-          </Toolbar>
-        </AppBar>
-      </div>
+ 
       <div className="landingBG">
         <div className="landing">
          

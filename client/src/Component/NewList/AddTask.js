@@ -9,7 +9,7 @@ import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 
 
-function AddTask(props) {
+export function AddTask(props) {
   const history = useHistory();
   const [open, setOpen] = React.useState(true);
   const [formState, setFormState] = useState({
@@ -147,5 +147,3 @@ function AddTask(props) {
     </div>
   );
 }
-
-export { AddTask };

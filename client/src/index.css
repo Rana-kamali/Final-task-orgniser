@@ -16,31 +16,30 @@ body {
   padding: 20px;
   margin-top: 30px;
 }
-h5{
-  color: #d54d7b; 
-  font-family: "Great Vibes", 
-  cursive; 
-  font-size: 30px; 
-  line-height: 30px; 
-  font-weight: normal; 
-  margin-bottom: 20px; 
-  margin-top: 40px; 
-  text-align: left; 
-  text-shadow: 0 1px 1px #fff;
-
+h5 {
+  color: #b0d1fd;
+  font-family: "Great Vibes", cursive;
+  font-size: 30px;
+  line-height: 30px;
+  font-weight: normal;
+  margin-bottom: 20px;
+  margin-top: 40px;
+  margin-right: 40px;
+  text-align: left;
+  margin-left: 40px;
 }
-p{
-  color: #111; 
-  font-family: 'Open Sans', sans-serif; 
-  font-size: 16px; 
-  line-height: 28px; 
+p {
+  color: #111;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  line-height: 28px;
   margin: 0 0 48px;
   width: 500px;
   height: 250px;
 }
-img{
+img {
   width: 100%;
-    max-width: 500px;
+  max-width: 500px;
 }
 input {
   margin-top: 20px;

@@ -40,12 +40,6 @@ const ProjectList = (props) => {
 
   return (
     <div>
-      <select onChange={handleClick}>
-        {projects.map((el) => {
-          return <option value={el._id}>{el.projectName}</option>;
-        })}
-        ;
-      </select>
       <TaskTable tasks={tasks} />
     </div>
   );
